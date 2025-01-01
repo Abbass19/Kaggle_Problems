@@ -1,0 +1,23 @@
+data:
+  file_path: "your_dataset.csv"
+
+logistic_regression:
+  penalties: ["l2", "none"]
+
+decision_tree:
+  max_depth: 5
+
+random_forest:
+  n_estimators: 100
+
+svm:
+  kernel: "rbf"
+  C: 1.0
+  gamma: "scale"
+
+knn:
+  neighbors: 5
+
+neural_network:
+  hidden_layers: [64, 32]
+  max_iter: 1000
