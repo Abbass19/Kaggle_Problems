@@ -37,7 +37,7 @@ def encode_feature(data):
     encoded_data[data == 'C'] = 2
     return encoded_data
 
-def Titanic_Data_Preparation():
+def Titanic_Data_Preparation(printing = False):
     """This is a procedure to Make the Data of the Titanic ready to
         implement with different binary classification models. Not something to Generalize """
     current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -71,9 +71,9 @@ def Titanic_Data_Preparation():
     features = ["P_class", "Sex", "Age", "SibSP", "Parch", "Fare", "Embarked"]
     X_train, X_temp, y_train, y_temp = train_test_split(X,Y,test_size=0.3,random_state=42)
     X_val, X_test, y_val, y_test = train_test_split(X_temp,y_temp,test_size=0.5,random_state=42)
-
-    print("Training set size:", len(X_train))
-    print("Validation set size:", len(X_val))
-    print("Test set size:", len(X_test))
+    if printing:
+        print("Training set size:", len(X_train))
+        print("Validation set size:", len(X_val))
+        print("Test set size:", len(X_test))
 
     return X_train,X_val,X_test,y_train,y_val,y_test,features

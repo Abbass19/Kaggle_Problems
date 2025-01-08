@@ -67,7 +67,6 @@ for penalty in penalties:
 
                 model = LogisticRegression(penalty=penalty,C=C_value ,solver=solver,max_iter=iteration)
                 model.fit(X_train, y_train)
-                model.predict(X_train)
                 train_accuracy = evaluate_model(model, X_train, y_train)
                 cv_accuracy = evaluate_model(model, X_val, y_val)
                 test_accuracy = evaluate_model(model,X_test,y_test)
